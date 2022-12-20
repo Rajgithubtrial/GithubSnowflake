@@ -50,4 +50,6 @@ jobs:
            echo "Step 3: "
            echo "GITHUB_WORKSPACE 2 : $GITHUB_WORKSPACE"
            
+           ls -d "$GITHUB_WORKSPACE"/* > listOfFiles.list
+           
           #schemachange -f $GITHUB_WORKSPACE/Scripts -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table
