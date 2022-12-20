@@ -47,10 +47,5 @@ jobs:
           
           echo "Step 2: Running schemachange"
           
-           echo "Step 3: "
-           echo "GITHUB_WORKSPACE 2 : $GITHUB_WORKSPACE"
-      - name: Install SnowSQL
-        run: |
-            ~/bin/snowsql -q   'CREATE TABLE STUDENTS_CLASS  ( CLASS_ID NUMBER, CLASS_NAME VARCHAR(20), CLASS_GRADE VARCHAR(20), CLASS_LANGUAGE VARCHAR(20))'
-           
-          #schemachange -f $GITHUB_WORKSPACE/Scripts -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table
+          schemachange -f $GITHUB_WORKSPACE/Scripts -a $SF_ACCOUNT -u $SF_USERNAME -r $SF_ROLE -w $SF_WAREHOUSE -d $SF_DATABASE -c $SF_DATABASE.SCHEMACHANGE.CHANGE_HISTORY --create-change-history-table
+          pip install snowsql
